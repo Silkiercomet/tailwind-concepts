@@ -8,7 +8,101 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="selectors">
+      <div id="hover_select" class="grid place-items-center py-10 border-b-4 mx-8 border-opacity-50 border-blue-300">
+        <header class="absolute left-8 top-4 font-bold text-2xl">hover selector</header>
+        <button class="p-8 bg-violet-100 shadow-lg rounded-full transition-all hover:bg-violet-500 hover:text-white hover:shadow-violet-950">Hover Me</button>
+      </div>
+      <div id="order_select" class="relative grid place-items-center py-10 border-b-4 mx-8 border-opacity-50 border-blue-300">
+        <header class="absolute left-0 top-4 font-bold text-2xl">even, odd, first & last </header>
+        <table class="border-4 ">
+          <thead>
+            <tr class="*:p-4 ">
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr class="first:border-t-green-700 *:p-4 border-y-2 even:bg-slate-200 *:even:border-y-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 1-1</td>
+              <td>Data 1-2</td>
+              <td>Data 1-3</td>
+            </tr>
+            <tr class="first:border-t-green-700 *:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 2-1</td>
+              <td>Data 2-2</td>
+              <td>Data 2-3</td>
+            </tr>
+            <tr class="first:border-t-green-700 *:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 3-1</td>
+              <td>Data 3-2</td>
+              <td>Data 3-3</td>
+            </tr>
+            <tr class="*:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 4-1</td>
+              <td>Data 4-2</td>
+              <td>Data 4-3</td>
+            </tr>
+            <tr class="*:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 5-1</td>
+              <td>Data 5-2</td>
+              <td>Data 5-3</td>
+            </tr>
+            <tr class="*:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 6-1</td>
+              <td>Data 6-2</td>
+              <td>Data 6-3</td>
+            </tr>
+            <tr class="*:p-4 border-y-2 even:bg-slate-200 *:even:border-l-2 *:even:border-r-2 *:even:border-gray-400 border-gray-400"  >
+              <td>Data 7-1</td>
+              <td>Data 7-2</td>
+              <td>Data 7-3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="peer_select" class="relative grid place-items-center py-10 border-b-4 mx-8 border-opacity-50 border-blue-300">
+        <header class="absolute left-0 top-4 font-bold text-2xl">peer selector</header>
+        <div class="block *:transition-all">
+          <input type="email" value="silkier@gmail." placeholder="hi" class="border-2 border-blue-300 invalid:border-pink-600 peer outline-none p-4 shadow-2xl shadow-slate-500 bg-[#ebebeb] " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+          <p class="mt-4 invisible peer-invalid:visible text-pink-600 text-sm">
+            Please provide a valid email address.
+          </p>
+        </div>
+      </div>
+      <div id="child_select" class="relative grid place-items-center py-10 border-b-4 mx-8 border-opacity-50 border-blue-300">
+        <header class="absolute left-0 top-4 font-bold text-2xl">child-*-all selector</header>
+        <ul class="max-w-[400px] flex flex-wrap gap-5 *:text-blue-400 *:bg-blue-100 *:shadow-lg *:p-4 *:rounded-sm *:shadow-blue-600 *:cursor-pointer *:transition-all hover:*:-translate-y-2 hover:*:shadow-blue-300 hover:*:shadow-md">
+          <li>Sales</li>
+          <li>Marketing</li>
+          <li>SEO</li>
+          <li>Analitics</li>
+          <li>Web Development</li>
+          <li>Back End Development</li>
+        </ul>
+      </div>
+      <div id="desendants" class="relative grid place-items-center py-10 border-b-4 mx-8 border-opacity-50 border-blue-300">
+        <header class="absolute left-0 top-4 font-bold text-2xl">has-{desendent} selector</header>
+        <div class="grid gap-4">
+          <label for="vite1" class="flex items-center w-[200px] justify-between p-4 border-2 border-transparent transition-all cursor-pointer has-[:checked]:bg-purple-300 has-[:checked]:border-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="#F7DF1E" d="M0 0h256v256H0V0Z"></path><path d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"></path></svg>
+            Vite
+            <input type="radio" name="radio" id="vite1" class="rounded-md transition-all box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white shadow-md bg-grborder-gray-300 bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500">
+          </label>
+          <label for="vite2" class="flex items-center w-[200px] justify-between p-4 border-2 border-transparent transition-all cursor-pointer has-[:checked]:bg-purple-300 has-[:checked]:border-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="#F7DF1E" d="M0 0h256v256H0V0Z"></path><path d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"></path></svg>
+            Vite
+            <input type="radio" name="radio" id="vite2" class="rounded-md transition-all box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white shadow-md bg-grborder-gray-300 bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500">
+          </label>
+          <label for="vite3" class="flex items-center w-[200px] justify-between p-4 border-2 border-transparent transition-all cursor-pointer has-[:checked]:bg-purple-300 has-[:checked]:border-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="#F7DF1E" d="M0 0h256v256H0V0Z"></path><path d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"></path></svg>
+            Vite
+            <input type="radio" name="radio" id="vite3" class="rounded-md transition-all box-content h-1.5 w-1.5 appearance-none rounded-full border-[5px] border-white shadow-md bg-grborder-gray-300 bg-clip-padding outline-none ring-1 ring-gray-950/10 checked:border-indigo-500 checked:ring-indigo-500">
+          </label>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
